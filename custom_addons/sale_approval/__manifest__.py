@@ -21,6 +21,7 @@ Long description of module's purpose
     'depends': ['sale_management'],
 
     # always loaded
-    'data': ['views/sale_order_views.xml'],
+    'data': ['security/security.xml',
+             'views/sale_order_views.xml'],
 }
 

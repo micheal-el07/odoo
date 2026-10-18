@@ -35,6 +35,9 @@ class SaleOrder(models.Model):
 
     def action_approve(self):
         for order in self:
+            if not self.env.user.has_group("sale_approval.group_sale_approver"):
+                raise UserError("You are not allowed to approve or reject orders.")
+            
             if order.approval_state != "to_approve":
                 raise UserError("Only orders waiting for approval can be approved.")
             
@@ -43,6 +46,9 @@ class SaleOrder(models.Model):
 
     def action_reject(self):
         for order in self:
+            if not self.env.user.has_group("sale_approval.group_sale_approver"):
+                raise UserError("You are not allowed to approve or reject orders.")
+            
             if order.approval_state != "to_approve":
                 raise UserError("Only orders waiting for approval can be rejected.")
             

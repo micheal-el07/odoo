@@ -8,14 +8,18 @@
       <xpath expr="//header" position="inside">
         <button name="action_request_approval" type="object"
           string="Request Approval"
-          invisible="not needs_approval or approval_state not in ('not_required', 'rejected')"/>
-        <button name="action_approve" type="object"
-            string="Approve"
-            invisible="not needs_approval or approval_state != 'to_approve'"
+          invisible="not needs_approval or approval_state not in ('not_required', 'rejected')"
         />
-        <button name="action_reject" type="object"
-            string="Reject"
-            invisible="not needs_approval or approval_state != 'to_approve'"/>
+        
+        <button name="action_approve" type="object" string="Approve"
+          groups="sale_approval.group_sale_approver"
+          invisible="not needs_approval or approval_state != 'to_approve'"
+        />
+
+        <button name="action_reject" type="object" string="Reject"
+          groups="sale_approval.group_sale_approver"
+          invisible="not needs_approval or approval_state != 'to_approve'"
+        />
       </xpath>
 
       <xpath expr="//field[@name='partner_id']" position="after">
