@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_sale_marketplace_blue_sale_marketplace_blue,sale_marketplace_blue.sale_marketplace_blue,model_sale_marketplace_blue_sale_marketplace_blue,base.group_user,1,1,1,1
