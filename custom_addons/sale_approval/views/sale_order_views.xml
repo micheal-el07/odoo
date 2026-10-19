@@ -22,8 +22,14 @@
         />
       </xpath>
 
+      <!-- <xpath expr="//field[@name='partner_id']" position="after">
+        <field name="approval_state" readonly="1"/>
+      </xpath> -->
+
       <xpath expr="//field[@name='partner_id']" position="after">
         <field name="approval_state" readonly="1"/>
+        <field name="approved_by" invisible="approval_state != 'approved'"/>
+        <field name="approved_date" invisible="approval_state != 'approved'"/>
       </xpath>
 
     </field>
